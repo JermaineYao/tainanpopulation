@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>2019 台南市人口統計</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="CSS/reset.css">
+  <link rel="stylesheet" href="CSS/login.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="imgWrap">
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock2"><p class="text">Tain</p></div>
+    <div class="imgBlock2"><p class="text">an</p></div>
+    <div class="imgBlock2"><p class="text" style="font-size: 60px; padding: 20px">2019</p><</div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock2"><p class="text modified">Pop</p></div>
+    <div class="imgBlock2"><p class="text">ulat</p></div>
+    <div class="imgBlock2"><p class="text">ion</p></div>
+    <div class="imgBlock2 scrollIndex">
+      <p>scroll</p>
+      <div class="scrollArrow">
+        <div class="scroll down1"></div>
+        <div class="scroll down2"></div>
+        <div class="scroll down3"></div>
+      </div>
+    </div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+    <div class="imgBlock"></div>
+  </div>
+
+  <section>
+    <div id="mapWrap">
+      <div id="reviewMap">
+        <h2 id="reviewTown"></h2>
+        <h2 id="reviewTownEng">請選擇行政區</h2>
+        <h2 id="reviewPeople"></h2>
+        <svg width="800" height="1000">
+          <defs>
+            <linearGradient id="f" x1="0%" y1="0%" x1="100%" y2="0%">
+              <stop offset="0%" stop-color="#fae0b2"></stop>
+              <stop offset="100%" stop-color="#cc0a78"></stop>
+            </linearGradient>
+            <linearGradient id="m" x1="0%" y1="0%" x1="100%" y2="0%">
+              <stop offset="0%" stop-color="#aff7ff"></stop>
+              <stop offset="100%" stop-color="#6313dd"></stop>
+            </linearGradient>
+          </defs>
+          <g id="geo"></g>
+        </svg>
+      </div>
+      <div id="showTown">
+        <h1 id="townName">縣市中文</h1>
+        <h2 id="townEng"></h2>
+        <div id="tainanCity">查看台南市全部</div>
+        <div id="selection">
+            <ul id="gender">性別
+              <li data="計">全部</li>
+              <li data="男">男</li>
+              <li data="女">女</li>
+            </ul>
+
+            <ul id="mouth">2019 月份
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+              <li>11</li>
+              <li>12</li>
+            </ul>
+
+            <ul id="age">年齡層
+              <li>總計</li>
+              <li>0至4歲</li>
+              <li>5至9歲</li>
+              <li>10至14歲</li>
+              <li>15至19歲</li>
+              <li>20至24歲</li>
+              <li>25至29歲</li>
+              <li>30至34歲</li>
+              <li>35至39歲</li>
+              <li>40至44歲</li>
+              <li>45至49歲</li>
+              <li>50至54歲</li>
+              <li>55至59歲</li>
+              <li>60至64歲</li>
+              <li>65至69歲</li>
+              <li>70至74歲</li>
+              <li>75至79歲</li>
+              <li>80至84歲</li>
+              <li>85至89歲</li>
+              <li>90至94歲</li>
+              <li>95至99歲</li>
+              <li>100歲以上</li>
+            </ul>
+        </div>
+        <div id="confirm">開始分析</div>
+      </div>
+    </div>
+    <div id="chart">
+      <!-- <svg id="band" width="1400" height="1000"></svg>
+      <svg id="band" width="1400" height="1000"></svg> -->
+    </div>
+  </section>
+
+  <script type="text/javascript" src="javascript/login.js"></script>
+</body>
+</html>

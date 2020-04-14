@@ -1,0 +1,300 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "王漢宗細園繁體";
+  src: url(../font/wt006.ttf);
+  unicode-range: U+4E00-9FFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 王漢宗細園繁體, sans-serif;
+  position: relative;
+  background-color: black;
+}
+
+#imgWrap {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 4fr);
+  /* grid-row-gap: 1px;
+  grid-column-gap: 1px; */
+  width: 1680px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: rgb(0, 14, 48);
+}
+
+.imgBlock, .imgBlock2 {
+  background-image: url(../image/tainan.png);
+  background-attachment: fixed;
+  background-size: 1680px 1440px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  opacity: 1;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.text, .scrollIndex p {
+  width: 100%;
+  height: 100%;
+  font-family: 'Oxanium', cursive;
+  font-size: 90px;
+  letter-spacing: 5px;
+  color: #fff;
+  text-shadow: 3px 3px 0px #000;
+  background-color: rgba(157, 170, 209, 0.8);
+}
+
+.modified {
+  padding-left: 20px;
+}
+
+.scrollIndex {
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollIndex p {
+  letter-spacing: 2px;
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.scrollArrow {
+  width: 100%;
+  height: calc(100% - 50px);
+  background-color: rgba(0, 14, 48, 0.7);
+  position: relative;
+}
+
+.scroll {
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  position: absolute;
+  border-style: solid;
+  border-width: 30px 20px 0 20px;
+  border-color: rgba(255, 255, 255, 1) transparent transparent transparent;
+  left: calc((100% - 30px)/2);
+}
+
+.down1 {
+  top: 20px;
+  animation: scrollDown 1.5s 0s ease infinite;
+}
+
+.down2 {
+  top: 40px;
+  animation: scrollDown 1.5s 200ms ease infinite;
+}
+
+.down3 {
+  top: 60px;
+  animation: scrollDown 1.5s 400ms ease infinite;
+}
+
+@keyframes scrollDown {
+  0%, 100% {
+    border-color: rgba(255, 255, 255, 0) transparent transparent transparent;
+  }
+  25% {
+    border-color: rgba(255, 255, 255, 0.75) transparent transparent transparent;
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 1) transparent transparent transparent;
+  }
+  75% {
+    border-color: rgba(255, 255, 255, 0.25) transparent transparent transparent;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  #imgWrap {
+    width: 100vw;
+  }
+
+  .imgBlock, .imgBlock2 {
+    background-size: cover;
+  }
+
+  .text {
+    letter-spacing: 0px;
+  }
+
+  .modified {
+    padding-left: 0px;
+  }
+}
+
+#geo path {
+  z-index: 5;
+  cursor: pointer;
+}
+
+#geo path:hover {
+  z-index: 100;
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+#mapWrap {
+  display: flex;
+  flex-direction: row;
+  width: 1680px;
+  height: 100%;
+  background-color: rgba(180, 180, 180, 1);
+  margin: 0 auto;
+}
+
+#reviewMap, #showTown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+#reviewMap {
+  justify-content: space-between;
+}
+
+#showTown {
+  justify-content: flex-start;
+}
+
+h1 {
+  display: block;
+  width: 500px;
+  height: 100px;
+  margin-top: 30px;
+  font-size: 60px;
+  color: #fff;
+  text-shadow: 3px 3px 0px #000;
+  background-color: rgba(157, 170, 209, 0.8);
+  line-height: 80px;
+  text-align: center;
+  border-bottom: 5px solid #fff;
+}
+
+h2 {
+  width: 500px;
+  height: 50px;
+  color: #fff;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#townEng {
+  display: block;
+  font-family: 'Oxanium', cursive;
+  margin-top: 30px;
+}
+
+#reviewMap h2 {
+  color: #fff;
+}
+
+#reviewTown {
+  margin-top: 100px;
+}
+
+#reviewPeople {
+  line-height: 50px;
+}
+
+#tainanCity, #confirm {
+  color: #fff;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 30px;
+  text-align: center;
+  transition: all 800ms;
+  border: 2px solid rgba(255, 255, 255, 0);
+  cursor: pointer;
+}
+
+#tainanCity:hover, #confirm:hover {
+  background-color: rgba(157, 170, 209, 0.8);
+  border: 2px solid rgba(255, 255, 255, 1);
+  transform: translate(0, -5px);
+}
+
+#selection {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+#selection ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  margin: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0;
+}
+
+#age {
+  width: 30%;
+}
+
+#selection ul li, #selection ul {
+  list-style: none;
+  padding: 5px;
+  color: rgb(0, 14, 48);
+  transition: all 800ms;
+  border: 2px solid rgba(255, 255, 255, 0);
+  cursor: pointer;
+}
+
+#selection ul li {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+#selection ul li:nth-of-type(1) {
+  margin-top: 20px;
+}
+
+#selection ul li:hover, #selection ul li.selected {
+  color: #fff;
+  background-color: rgba(157, 170, 209, 0.8);
+  border: 2px solid rgba(255, 255, 255, 1);
+  transform: translate(0, -5px);
+}
+
+#confirm {
+  margin-top: 0px;
+  margin-bottom: 100px;
+  font-size: 22px;
+  opacity: 0;
+}
+
+#chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1680px;
+  height: 100%;
+  background-color: rgba(180, 180, 180, 1);
+  margin: 0 auto;
+}
+
+/* #band, #bandAge, #stack {
+  border: 1px solid black;
+} */
